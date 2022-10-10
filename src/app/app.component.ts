@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Broma } from './broma';
 import { GestionBromas } from './gestion-bromas';
 
 @Component({
@@ -14,18 +15,18 @@ export class AppComponent {
 
   bromaSeleccionada = -1;
 
-  nuevaPreg = "";
-  nuevaRes = "";
+  
 
   borrarBroma(bromaSelect:number){
     this.gestionBromas.eliminarBroma(bromaSelect)
     console.log(this.gestionBromas.getListaBromas())
   }
 
-  addBroma(pregunta:string, respuesta:string){
-    this.gestionBromas.añadirPregunta(pregunta,respuesta)
-    
+  createBroma(nuevaBroma:Broma){
+    this.gestionBromas.añadirBroma(nuevaBroma);
   }
+
+  
 
   
 
