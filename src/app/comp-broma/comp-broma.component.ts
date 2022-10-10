@@ -7,7 +7,7 @@ import { Broma } from '../broma';
   styleUrls: ['./comp-broma.component.css']
 })
 export class CompBromaComponent implements OnInit {
-    @Input() id:number=-1;
+    @Input() id!:number;
     @Input() pregunta:string="";
     @Input() respuesta:string="";
     @Output() emitBorrarBroma = new EventEmitter<number>(); //El event emitter sirve para pasar eventos al padre
