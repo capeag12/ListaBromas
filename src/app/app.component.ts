@@ -24,6 +24,7 @@ export class AppComponent {
 
   createBroma(nuevaBroma:Broma){
     this.gestionBromas.añadirBroma(nuevaBroma);
+    console.log(this.gestionBromas.getListaBromas())
   }
 
   
