@@ -1,18 +1,5 @@
 <h1>Lista bromas</h1>
-
-
-<div id="crearBromas" class="card">
-    <div class="card-body">
-        <label for="preg" class="form-label">Pregunta:</label>
-        <br><input type="text" name="preg" id="preg" #pregunta>
-        <br>
-        <label for="res" class="form-label">Respuesta:</label><br><input type="text" name="res" id="res" #respuesta>
-        <br>
-        <br>
-        <button id="btnAñadir" class="btn btn-success" (click)="addBroma(pregunta.value, respuesta.value); pregunta.value=''; respuesta.value='' ">Añadir</button>
-    </div>
-    
-</div>
+<compAddBroma (emitirBroma)="crearBroma($event)"></compAddBroma>
 <br>
 
 <CompBroma *ngFor="let item of lista; let indice=index" [id]="indice" [pregunta]="item.getPregunta()" [respuesta]="item.getRespuesta()" (emitBorrarBroma)="borrarBroma($event)"></CompBroma>

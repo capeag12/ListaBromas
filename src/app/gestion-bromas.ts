@@ -16,8 +16,12 @@ export class GestionBromas {
         return this.listaBromas;
     }
     
-    public añadirPregunta(pregunta:string, respuesta:string) {
+    public añadirBroma(pregunta:string, respuesta:string) {
         this.listaBromas.push(new Broma(pregunta,respuesta))
+    }
+
+    public crearBroma(nuevaBroma:Broma) {
+        this.listaBromas.push(nuevaBroma)
     }
 
     public devolverIndice(indice:number):Broma {
