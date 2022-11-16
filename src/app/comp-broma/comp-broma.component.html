@@ -4,8 +4,8 @@
         <h2>Broma: {{id +1}}</h2>
      </div>   
     <div class="card-body">
-        <p>{{pregunta}}</p>
-        <p>{{respuesta}}</p>
+        <p>{{pregunta | banBadLanguaje:['palabrota1','palabrota2']}}</p>
+        <p>{{respuesta | banBadLanguaje:['palabrota1','palabrota2']}}</p>
         <button class="btn btn-danger" (click)="borrarBroma()">Eliminar broma</button>
     </div>
 </div>
