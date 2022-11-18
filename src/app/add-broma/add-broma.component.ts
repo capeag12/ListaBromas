@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Broma } from '../broma';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'compAddBroma',
@@ -8,7 +9,14 @@ import { Broma } from '../broma';
 })
 export class AddBromaComponent implements OnInit {
   @Output() emitirBroma = new EventEmitter<Broma>();
-  constructor() { }
+
+  addBromaForm:FormGroup
+  constructor() { 
+    this.addBromaForm = new FormGroup({
+      pregunta:new FormControl('',[Validators.required,Validators.minLength(6)]),
+      respuesta:new FormControl('',[Validators.required,Validators.minLength(6)])
+    })
+  }
 
   ngOnInit(): void {
   }
